@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace CinemaReservationManager.Application
 {
-    public partial class Form1 : Form
+    public partial class WelcomeContainerForm : Form
     {
-        public Form1()
+        public WelcomeContainerForm()
         {
             InitializeComponent();
+        }
+
+        private void WelcomeContainerForm_Load(object sender, EventArgs e)
+        {
+            WelcomeForm welcomeForm = new WelcomeForm(this);
+            welcomeForm.MdiParent = this;
+            welcomeForm.Show();
         }
     }
 }

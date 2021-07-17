@@ -1,7 +1,7 @@
 ﻿
 namespace CinemaReservationManager.Application
 {
-    partial class Form1
+    partial class WelcomeContainerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,19 @@ namespace CinemaReservationManager.Application
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // WelcomeContainerForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(356, 539);
+            this.IsMdiContainer = true;
+            this.Name = "WelcomeContainerForm";
+            this.Text = "Welcome";
+            this.Load += new System.EventHandler(this.WelcomeContainerForm_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

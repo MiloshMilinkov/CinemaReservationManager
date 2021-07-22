@@ -1,4 +1,5 @@
-﻿using CinemaReservationManager.Repository;
+﻿using CinemaReservationManager.Application.Forms.Administration;
+using CinemaReservationManager.Repository;
 using CinemaReservationManager.Repository.DTOs;
 using CinemaReservationManager.Repository.Models;
 using System;
@@ -63,6 +64,9 @@ namespace CinemaReservationManager.Application
                 if (result.IsSuccessful)
                 {
                     MessageBox.Show("Login successful!");
+                    AdministrationForm administrationForm = new AdministrationForm(loginAdminDTO.UserName);
+                    administrationForm.Show();
+                    _formMdiParent.Hide();
                 }
                 else
                 {

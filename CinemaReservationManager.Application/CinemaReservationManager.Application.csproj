@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Administration\AdministrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\AdministrationForm.Designer.cs">
+      <DependentUpon>AdministrationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Welcome\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="Forms\Welcome\WelcomeForm.Designer.cs">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Administration\AdministrationForm.resx">
+      <DependentUpon>AdministrationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Welcome\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

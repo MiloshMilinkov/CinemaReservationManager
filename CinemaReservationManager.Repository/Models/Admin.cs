@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CinemaReservationManager.Repository.Models
 {
-    class Admin:User
+    public class Admin:User
     {
         public string Pin { get; set; }
     }

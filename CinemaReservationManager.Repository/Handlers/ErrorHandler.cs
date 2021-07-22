@@ -57,5 +57,21 @@ namespace CinemaReservationManager.Repository.Handlers
             }
             return result;
         }
+        public static Result IsValidDto(LoginAdminDTO loginAdminDTO)
+        {
+            Result result = new Result();
+            result.ErrorMessage = "Please enter: ";
+            if (string.IsNullOrEmpty(loginAdminDTO.UserName))
+            {
+                result.IsSuccessful = false;
+                result.ErrorMessage += "User name ";
+            }
+            if (string.IsNullOrEmpty(loginAdminDTO.PinPassword))
+            {
+                result.IsSuccessful = false;
+                result.ErrorMessage += "Pin+Password";
+            }
+            return result;
+        }
     }
 }

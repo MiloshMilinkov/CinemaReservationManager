@@ -10,7 +10,7 @@ namespace CinemaReservationManager.Repository.Handlers
     public static class FileHandler
     {
         
-        public static List<StandardUser> ReadAllRecords(string fileName)
+        public static List<StandardUser> ReadAllStandardUsers(string fileName)
         {
             List<StandardUser> standardUsers=new List<StandardUser>();    
             string line;
@@ -33,17 +33,42 @@ namespace CinemaReservationManager.Repository.Handlers
 
                              };
                             standardUsers.Add(standardUser);
-                        }
-                    
-                       }
-                   
+                        }                   
+                       }                 
             }
             catch(Exception ex)
             {
-
             }
-        
+     
             return standardUsers;
+        }
+        public static List<Admin> ReadAllAdmins(string fileName)
+        {
+            List<Admin> admins = new List<Admin>();
+            string line;
+            try
+            {
+                using (StreamReader sr = new StreamReader(@"C:\Users\Milosh\Desktop\" + fileName))
+                {
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        string[] data = line.Split('|');
+                        Admin admin= new Admin()
+                        {
+                            Id = int.Parse(data[0]),
+                            UserName = data[1],
+                            Password = data[2],
+                            Sex = data[3],
+                            Pin = data[4]
+                        };
+                        admins.Add(admin);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return admins;
         }
         public static void WriteRecord(string fileName, StandardUser standardUser)
         {

@@ -18,12 +18,14 @@ namespace CinemaReservationManager.Application
         private readonly bool _isAdminLogin;
         private readonly Form _formMdiParent;
         private readonly UserRepository _userRepository;
+        private readonly AdminRepository _adminRepository;
         public LoginForm(bool isAdminLogin,Form formMdiParent)
         {
             InitializeComponent();
             _isAdminLogin = isAdminLogin;
             _formMdiParent = formMdiParent;
             _userRepository = new UserRepository();
+            _adminRepository = new AdminRepository();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -50,19 +52,39 @@ namespace CinemaReservationManager.Application
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            LoginUserDTO loginUserDTO = new LoginUserDTO()
+            if (_isAdminLogin)
             {
-                UserName = txtUserName.Text,
-                Password = txtPassword.Text
-            };
-            Result result = _userRepository.Login(loginUserDTO);
-            if (result.IsSuccessful)
-            {
-                MessageBox.Show("Login successful!");
+                LoginAdminDTO loginAdminDTO = new LoginAdminDTO()
+                {
+                    UserName = txtUserName.Text,
+                    PinPassword = txtPassword.Text
+                };
+                Result result = _adminRepository.Login(loginAdminDTO);
+                if (result.IsSuccessful)
+                {
+                    MessageBox.Show("Login successful!");
+                }
+                else
+                {
+                    MessageBox.Show(result.ErrorMessage);
+                }
             }
             else
             {
-                MessageBox.Show(result.ErrorMessage);
+                LoginUserDTO loginUserDTO = new LoginUserDTO()
+                {
+                    UserName = txtUserName.Text,
+                    Password = txtPassword.Text
+                };
+                Result result = _userRepository.Login(loginUserDTO);
+                if (result.IsSuccessful)
+                {
+                    MessageBox.Show("Login successful!");
+                }
+                else
+                {
+                    MessageBox.Show(result.ErrorMessage);
+                }
             }
         }
     }

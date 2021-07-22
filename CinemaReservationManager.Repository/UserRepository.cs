@@ -26,7 +26,7 @@ namespace CinemaReservationManager.Repository
                 return result;
             }
             //Generate new Id
-            List<StandardUser> standardUsers = FileHandler.ReadAllRecords("StandardUser.txt");
+            List<StandardUser> standardUsers = FileHandler.ReadAllStandardUsers("StandardUser.txt");
             int newId;
             if(standardUsers.Count==0)
             {
@@ -53,7 +53,7 @@ namespace CinemaReservationManager.Repository
         }
         public bool IsUserNameAvailable(String userName)
         {
-            foreach (var standardUser in FileHandler.ReadAllRecords("StandardUser.txt"))
+            foreach (var standardUser in FileHandler.ReadAllStandardUsers("StandardUser.txt"))
             {
                 if (standardUser.UserName == userName)
                 {
@@ -70,7 +70,7 @@ namespace CinemaReservationManager.Repository
             {
                 return result;
             }
-            foreach (var standardUser in FileHandler.ReadAllRecords("StandardUser.txt"))
+            foreach (var standardUser in FileHandler.ReadAllStandardUsers("StandardUser.txt"))
             {
                 if (standardUser.UserName == loginUserDTO.UserName && standardUser.Password== loginUserDTO.Password)
                 {

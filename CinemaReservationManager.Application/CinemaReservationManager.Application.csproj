@@ -106,5 +106,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CinemaReservationManager.Repository\CinemaReservationManager.Repository.csproj">
+      <Project>{6ee8b142-fd98-4b55-866c-efe101a18108}</Project>
+      <Name>CinemaReservationManager.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

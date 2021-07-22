@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CinemaReservationManager.Repository.DTOs;
+using CinemaReservationManager.Repository.Models;
+using CinemaReservationManager.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +16,12 @@ namespace CinemaReservationManager.Application
     public partial class RegisterForm : Form
     {
         private readonly Form _formMdiParent;
+        private readonly UserRepository _userRepository;
         public RegisterForm(Form formMdiParent)
         {
             InitializeComponent();
             _formMdiParent = formMdiParent;
+            _userRepository = new UserRepository();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -26,6 +31,37 @@ namespace CinemaReservationManager.Application
             welcomeForm.MdiParent = _formMdiParent;
             welcomeForm.Show();
             this.Dispose();
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.Text==txtRepeatPassword.Text)
+            {
+                RegisterUserDTO registerUserDTO = new RegisterUserDTO()
+                {
+                    UserName = txtUserName.Text,
+                    FirstName = txtFirstName.Text,
+                    LastName = txtLastName.Text,
+                    BirthDate = dtpBirthDate.Value,
+                    PhoneNumber = txtPhoneNumber.Text,
+                    Password = txtPassword.Text,
+                    Sex = rbMale.Checked ? "Male" : "Female"
+                };
+                Result result = _userRepository.Register(registerUserDTO);
+                if (result.IsSuccessful)
+                {
+                    MessageBox.Show("Registration successful!");
+                }
+                else
+                {
+                    MessageBox.Show(result.ErrorMessage);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Passwords do not match!");
+            }
+           
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CinemaReservationManager.Repository;
+using CinemaReservationManager.Repository.DTOs;
+using CinemaReservationManager.Repository.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,11 +17,13 @@ namespace CinemaReservationManager.Application
     {
         private readonly bool _isAdminLogin;
         private readonly Form _formMdiParent;
+        private readonly UserRepository _userRepository;
         public LoginForm(bool isAdminLogin,Form formMdiParent)
         {
             InitializeComponent();
             _isAdminLogin = isAdminLogin;
             _formMdiParent = formMdiParent;
+            _userRepository = new UserRepository();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -41,6 +46,24 @@ namespace CinemaReservationManager.Application
             //{
             //    lblLogin.Text += " as User";
             //}
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            LoginUserDTO loginUserDTO = new LoginUserDTO()
+            {
+                UserName = txtUserName.Text,
+                Password = txtPassword.Text
+            };
+            Result result = _userRepository.Login(loginUserDTO);
+            if (result.IsSuccessful)
+            {
+                MessageBox.Show("Login successful!");
+            }
+            else
+            {
+                MessageBox.Show(result.ErrorMessage);
+            }
         }
     }
 }

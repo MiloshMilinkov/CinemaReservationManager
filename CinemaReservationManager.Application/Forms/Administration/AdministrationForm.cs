@@ -12,9 +12,11 @@ namespace CinemaReservationManager.Application.Forms.Administration
 {
     public partial class AdministrationForm : Form
     {
-        public AdministrationForm()
+        private readonly string _loggedUserName;
+        public AdministrationForm(string loggedUserName)
         {
             InitializeComponent();
+            _loggedUserName = loggedUserName;
         }
     }
 }

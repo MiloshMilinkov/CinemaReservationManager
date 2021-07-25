@@ -92,8 +92,36 @@ namespace CinemaReservationManager.Repository.Handlers
             }
             catch(Exception ex)
             {
-
+                throw;
             }
+        }
+        public static void WriteAllRecords(string fileName,List<StandardUser> standardUsers)
+        {
+            string path = @"C:\Users\Milosh\Desktop\" + fileName;
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    sw.Write(string.Empty);
+                   
+                }
+
+                using (StreamWriter sw = File.AppendText(path))
+                {
+                
+                    foreach (var standardUser in standardUsers)
+                    {
+                        sw.WriteLine(standardUser.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            
+           
         }
     }
 }

@@ -8,7 +8,7 @@ namespace CinemaReservationManager.Repository.Handlers
 {
     public static class ErrorHandler
     {
-        public static Result IsValidDto(RegisterUserDTO registerUserDTO)
+        public static Result IsValidDto(UserDetailDTO registerUserDTO)
         {
             Result result = new Result();
             result.ErrorMessage = "Please enter: ";

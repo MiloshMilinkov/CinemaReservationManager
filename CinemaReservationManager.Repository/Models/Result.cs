@@ -12,7 +12,8 @@ namespace CinemaReservationManager.Repository.Models
         }
         public bool IsSuccessful { get; set; }
         public string ErrorMessage { get; set; }
-       
+        public object Object { get; set; }
+
 
     }
 }

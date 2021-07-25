@@ -46,11 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Administration\AdministrationForm.cs">
+    <Compile Include="Forms\Administration\AdministrationContainerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Administration\AdministrationForm.Designer.cs">
-      <DependentUpon>AdministrationForm.cs</DependentUpon>
+    <Compile Include="Forms\Administration\AdministrationContainerForm.Designer.cs">
+      <DependentUpon>AdministrationContainerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\AdministrationNavigationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\AdministrationNavigationForm.Designer.cs">
+      <DependentUpon>AdministrationNavigationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\StandardUserAdministrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\StandardUserAdministrationForm.Designer.cs">
+      <DependentUpon>StandardUserAdministrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\StandardUsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\StandardUsersForm.Designer.cs">
+      <DependentUpon>StandardUsersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Welcome\LoginForm.cs">
       <SubType>Form</SubType>
@@ -78,8 +96,17 @@
     <Compile Include="Forms\Welcome\WelcomeForm.Designer.cs">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\Administration\AdministrationForm.resx">
-      <DependentUpon>AdministrationForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Administration\AdministrationContainerForm.resx">
+      <DependentUpon>AdministrationContainerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\AdministrationNavigationForm.resx">
+      <DependentUpon>AdministrationNavigationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\StandardUserAdministrationForm.resx">
+      <DependentUpon>StandardUserAdministrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\StandardUsersForm.resx">
+      <DependentUpon>StandardUsersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Welcome\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

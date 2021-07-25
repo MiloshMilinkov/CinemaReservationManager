@@ -37,7 +37,7 @@ namespace CinemaReservationManager.Application
         {
             if (txtPassword.Text==txtRepeatPassword.Text)
             {
-                RegisterUserDTO registerUserDTO = new RegisterUserDTO()
+                UserDetailDTO registerUserDTO = new UserDetailDTO()
                 {
                     UserName = txtUserName.Text,
                     FirstName = txtFirstName.Text,

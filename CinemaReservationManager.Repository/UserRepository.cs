@@ -156,6 +156,7 @@ namespace CinemaReservationManager.Repository
             {
                 userDetailDTO = new UserDetailDTO()
                 {
+                    StandardUserId=standardUser.Id,
                     UserName = standardUser.UserName,
                     Password = standardUser.Password,
                     FirstName = standardUser.FirstName,

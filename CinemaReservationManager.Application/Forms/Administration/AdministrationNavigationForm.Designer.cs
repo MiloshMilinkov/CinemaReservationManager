@@ -54,6 +54,7 @@ namespace CinemaReservationManager.Application.Forms.Administration
             this.btnMovieAdministration.TabIndex = 1;
             this.btnMovieAdministration.Text = "Manage Movies";
             this.btnMovieAdministration.UseVisualStyleBackColor = true;
+            this.btnMovieAdministration.Click += new System.EventHandler(this.btnMovieAdministration_Click);
             // 
             // btnHallAdministration
             // 
@@ -63,6 +64,7 @@ namespace CinemaReservationManager.Application.Forms.Administration
             this.btnHallAdministration.TabIndex = 2;
             this.btnHallAdministration.Text = "Manage Halls";
             this.btnHallAdministration.UseVisualStyleBackColor = true;
+            this.btnHallAdministration.Click += new System.EventHandler(this.btnHallAdministration_Click);
             // 
             // btnProjectionAdministration
             // 
@@ -72,6 +74,7 @@ namespace CinemaReservationManager.Application.Forms.Administration
             this.btnProjectionAdministration.TabIndex = 3;
             this.btnProjectionAdministration.Text = "Manage Projections";
             this.btnProjectionAdministration.UseVisualStyleBackColor = true;
+            this.btnProjectionAdministration.Click += new System.EventHandler(this.btnProjectionAdministration_Click);
             // 
             // btnReservationAdministration
             // 
@@ -81,6 +84,7 @@ namespace CinemaReservationManager.Application.Forms.Administration
             this.btnReservationAdministration.TabIndex = 4;
             this.btnReservationAdministration.Text = "Manage Reservations";
             this.btnReservationAdministration.UseVisualStyleBackColor = true;
+            this.btnReservationAdministration.Click += new System.EventHandler(this.btnReservationAdministration_Click);
             // 
             // AdministrationNavigationForm
             // 

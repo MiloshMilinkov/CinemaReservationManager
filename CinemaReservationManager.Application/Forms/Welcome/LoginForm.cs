@@ -64,7 +64,7 @@ namespace CinemaReservationManager.Application
                 if (result.IsSuccessful)
                 {
                     MessageBox.Show("Login successful!");
-                    AdministrationForm administrationForm = new AdministrationForm(loginAdminDTO.UserName);
+                    AdministrationContainerForm administrationForm = new AdministrationContainerForm(loginAdminDTO.UserName);
                     administrationForm.Show();
                     _formMdiParent.Hide();
                 }

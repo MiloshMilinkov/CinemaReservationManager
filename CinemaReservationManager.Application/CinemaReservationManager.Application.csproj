@@ -118,6 +118,18 @@
     <Compile Include="Forms\Administration\ProjectionsForms.Designer.cs">
       <DependentUpon>ProjectionsForms.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MainManagement\MainManagementMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainManagement\MainManagementMainForm.Designer.cs">
+      <DependentUpon>MainManagementMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainManagement\MainManagementReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainManagement\MainManagementReservation.Designer.cs">
+      <DependentUpon>MainManagementReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Welcome\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +191,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Administration\ProjectionsForms.resx">
       <DependentUpon>ProjectionsForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainManagement\MainManagementMainForm.resx">
+      <DependentUpon>MainManagementMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainManagement\MainManagementReservation.resx">
+      <DependentUpon>MainManagementReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Welcome\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

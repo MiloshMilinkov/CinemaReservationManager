@@ -29,7 +29,7 @@ namespace CinemaReservationManager.Repository
             Reservation reservation = new Reservation()
             {
                 ReservationId = newId,
-                StandardUserId = int.Parse(reservationDetailDTO.StadnardUserId),
+                StandardUserId = int.Parse(reservationDetailDTO.StandardUserId),
                 ProjectionId = int.Parse(reservationDetailDTO.ProjectionId),
                 NumberOfSeats= int.Parse(reservationDetailDTO.NumberOfSeats),
                 OverallPrice= int.Parse(reservationDetailDTO.OverallPrice)
@@ -54,7 +54,7 @@ namespace CinemaReservationManager.Repository
             Reservation modifiedReservation = new Reservation()
             {
                 ReservationId = reservationDetailDTO.ReservationId,
-                StandardUserId = int.Parse(reservationDetailDTO.StadnardUserId),
+                StandardUserId = int.Parse(reservationDetailDTO.StandardUserId),
                 ProjectionId = int.Parse(reservationDetailDTO.ProjectionId),
                 NumberOfSeats = int.Parse(reservationDetailDTO.NumberOfSeats),
                 OverallPrice = int.Parse(reservationDetailDTO.OverallPrice)
@@ -107,14 +107,39 @@ namespace CinemaReservationManager.Repository
                 reservationDetailDTO = new ReservationDetailDTO()
                 {
                     ReservationId = reservation.ReservationId,
-                    StadnardUserId = reservation.StandardUserId.ToString(),
+                    StandardUserId = reservation.StandardUserId.ToString(),
                     ProjectionId = reservation.ProjectionId.ToString(),
                     NumberOfSeats= reservation.NumberOfSeats.ToString(),
                     OverallPrice= reservation.OverallPrice.ToString()
-
-
                 };
+                reservationDetailDTO.DisplayProperty_Set();
                 reservationDetailDTOs.Add(reservationDetailDTO);
+            }
+            return reservationDetailDTOs;
+        }
+        public List<ReservationDetailDTO> GetReservationsByUser(int id)
+        {
+            ReservationDetailDTO reservationDetailDTO;
+            List<ReservationDetailDTO> reservationDetailDTOs = new List<ReservationDetailDTO>();
+            List<Reservation> reservations = FileHandler.ReadAllReservations("Reservation.txt");
+            foreach (var reservation in reservations)
+            {
+                if (reservation.StandardUserId == id )
+                {
+                    reservationDetailDTO = new ReservationDetailDTO()
+                    {
+                        ReservationId = reservation.ReservationId,
+                        StandardUserId = reservation.StandardUserId.ToString(),
+                        ProjectionId = reservation.ProjectionId.ToString(),
+                        NumberOfSeats = reservation.NumberOfSeats.ToString(),
+                        OverallPrice = reservation.OverallPrice.ToString()
+
+
+                    };
+                    reservationDetailDTO.DisplayProperty_Set();
+                    reservationDetailDTOs.Add(reservationDetailDTO);
+                }
+                
             }
             return reservationDetailDTOs;
         }

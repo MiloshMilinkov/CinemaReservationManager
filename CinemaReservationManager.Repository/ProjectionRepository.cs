@@ -122,5 +122,61 @@ namespace CinemaReservationManager.Repository
             }
             return projectionDetailDTOs;
         }
+        public List<ProjectionDetailDTO> GetAvailableProjections()
+        {
+            ProjectionDetailDTO projectionDetailDTO;
+            List<ProjectionDetailDTO> projectionDetailDTOs = new List<ProjectionDetailDTO>();
+            List<Projection> projections = FileHandler.ReadAllProjections("Projection.txt");
+            foreach (var projection in projections)
+            {
+                if (projection.ProjectionDate>DateTime.Now)
+                {
+                    projectionDetailDTO = new ProjectionDetailDTO()
+                    {
+                        ProjectionId = projection.ProjectionId,
+                        ProjectionDate = projection.ProjectionDate,
+                        ProjectionStartTime = projection.ProjectionStartTime,
+                        HallId = projection.HallId.ToString(),
+                        MovieId = projection.MovieId.ToString(),
+                        TicketPrice = projection.TicketPrice.ToString()
+
+                    };
+                    projectionDetailDTO.DisplayProperty_Set();
+                    projectionDetailDTOs.Add(projectionDetailDTO);
+                }
+                
+            }
+            return projectionDetailDTOs;
+        }
+        public List<ProjectionDetailDTO> GetFilteredProjections(DateTime dateFrom,DateTime dateTo,int hallId,int movieId)
+        {
+            ProjectionDetailDTO projectionDetailDTO;
+            List<ProjectionDetailDTO> projectionDetailDTOs = new List<ProjectionDetailDTO>();
+            List<Projection> projections = FileHandler.ReadAllProjections("Projection.txt");
+            foreach (var projection in projections)
+            {
+                if (projection.ProjectionDate > DateTime.Now &&
+                    projection.ProjectionDate>dateFrom &&
+                    projection.ProjectionDate<dateTo && 
+                    projection.HallId==hallId &&
+                    projection.MovieId==movieId)
+                {
+                    projectionDetailDTO = new ProjectionDetailDTO()
+                    {
+                        ProjectionId = projection.ProjectionId,
+                        ProjectionDate = projection.ProjectionDate,
+                        ProjectionStartTime = projection.ProjectionStartTime,
+                        HallId = projection.HallId.ToString(),
+                        MovieId = projection.MovieId.ToString(),
+                        TicketPrice = projection.TicketPrice.ToString()
+                    };
+                    projectionDetailDTO.DisplayProperty_Set();
+                    projectionDetailDTOs.Add(projectionDetailDTO);
+                }
+
+            }
+            return projectionDetailDTOs;
+        }
+
     }
 }

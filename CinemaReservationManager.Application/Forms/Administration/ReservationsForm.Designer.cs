@@ -47,7 +47,7 @@ namespace CinemaReservationManager.Application.Forms.Administration
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(205, 216);
+            this.btnOk.Location = new System.Drawing.Point(295, 216);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(126, 63);
             this.btnOk.TabIndex = 18;
@@ -70,15 +70,14 @@ namespace CinemaReservationManager.Application.Forms.Administration
             this.lstReservations.FormattingEnabled = true;
             this.lstReservations.Location = new System.Drawing.Point(47, 10);
             this.lstReservations.Name = "lstReservations";
-            this.lstReservations.Size = new System.Drawing.Size(284, 186);
+            this.lstReservations.Size = new System.Drawing.Size(383, 186);
             this.lstReservations.TabIndex = 16;
-          
             // 
             // ReservationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 403);
+            this.ClientSize = new System.Drawing.Size(490, 403);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnAddReservation);

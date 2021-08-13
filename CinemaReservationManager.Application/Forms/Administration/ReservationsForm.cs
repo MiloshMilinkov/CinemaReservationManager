@@ -56,7 +56,7 @@ namespace CinemaReservationManager.Application.Forms.Administration
         {
             List<ReservationDetailDTO> reservationDetailDTOs = _reservationRepository.GetReservations();
             lstReservations.DataSource = reservationDetailDTOs;
-            lstReservations.DisplayMember = "ReservationId";
+            lstReservations.DisplayMember = "DisplayProperty";
             lstReservations.ValueMember = "ReservationId";
         }
     }

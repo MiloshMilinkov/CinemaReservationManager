@@ -92,8 +92,366 @@ namespace CinemaReservationManager.Repository.Handlers
             }
             catch(Exception ex)
             {
-
+                throw;
             }
         }
+        public static void WriteAllRecords(string fileName,List<StandardUser> standardUsers)
+        {
+            string path = @"C:\Users\Milosh\Desktop\" + fileName;
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    sw.Write(string.Empty);
+                   
+                }
+
+                using (StreamWriter sw = File.AppendText(path))
+                {
+                
+                    foreach (var standardUser in standardUsers)
+                    {
+                        sw.WriteLine(standardUser.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            
+           
+        }
+        public static List<Movie> ReadAllMovies(string fileName)
+        {
+            List<Movie> movies= new List<Movie>();
+            string line;
+            try
+            {
+                using (StreamReader sr = new StreamReader(@"C:\Users\Milosh\Desktop\" + fileName))
+                {
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        string[] data = line.Split('|');
+                        Movie movie = new Movie()
+                        {
+                            Id = int.Parse(data[0]),
+                            MovieName = data[1],
+                            Ganre = data[2],
+                            MovieLenght = int.Parse(data[3]),
+                            AgeRestriction = int.Parse(data[4])
+                        };
+                        movies.Add(movie);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return movies;
+        }
+        public static void WriteRecord(string fileName, Movie movie)
+        {
+            string path = @"C:\Users\Milosh\Desktop\" + fileName;
+            try
+            {
+                if (!File.Exists(path))
+                {
+                    using (StreamWriter sw = File.CreateText(path))
+                    {
+                        sw.WriteLine(movie.ToString());
+                    }
+                }
+                else
+                {
+                    using (StreamWriter sw = File.AppendText(path))
+                    {
+                        sw.WriteLine(movie.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        public static void WriteAllRecords(string fileName, List<Movie> movies)
+        {
+            string path = @"C:\Users\Milosh\Desktop\" + fileName;
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    sw.Write(string.Empty);
+
+                }
+
+                using (StreamWriter sw = File.AppendText(path))
+                {
+
+                    foreach (var movie in movies)
+                    {
+                        sw.WriteLine(movie.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
+        }
+        public static List<Hall> ReadAllHalls(string fileName)
+        {
+            List<Hall> halls= new List<Hall>();
+            string line;
+            try
+            {
+                using (StreamReader sr = new StreamReader(@"C:\Users\Milosh\Desktop\" + fileName))
+                {
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        string[] data = line.Split('|');
+                        Hall hall = new Hall()
+                        {
+                            Id = int.Parse(data[0]),
+                            HallNumber = int.Parse(data[1]),
+                            NumberOfSeats = int.Parse(data[2])
+                            
+                        };
+                        halls.Add(hall);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return halls;
+        }
+        public static void WriteRecord(string fileName, Hall hall)
+        {
+            string path = @"C:\Users\Milosh\Desktop\" + fileName;
+            try
+            {
+                if (!File.Exists(path))
+                {
+                    using (StreamWriter sw = File.CreateText(path))
+                    {
+                        sw.WriteLine(hall.ToString());
+                    }
+                }
+                else
+                {
+                    using (StreamWriter sw = File.AppendText(path))
+                    {
+                        sw.WriteLine(hall.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        public static void WriteAllRecords(string fileName, List<Hall> halls)
+        {
+            string path = @"C:\Users\Milosh\Desktop\" + fileName;
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    sw.Write(string.Empty);
+
+                }
+
+                using (StreamWriter sw = File.AppendText(path))
+                {
+
+                    foreach (var hall in halls)
+                    {
+                        sw.WriteLine(hall.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
+        }
+        public static List<Projection> ReadAllProjections(string fileName)
+        {
+            List<Projection> projections = new List<Projection>();
+            string line;
+            try
+            {
+                using (StreamReader sr = new StreamReader(@"C:\Users\Milosh\Desktop\" + fileName))
+                {
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        string[] data = line.Split('|');
+                        Projection projection = new Projection()
+                        {
+                            ProjectionId = int.Parse(data[0]),
+                            ProjectionDate = DateTime.Parse(data[1]),
+                            ProjectionStartTime = DateTime.Parse(data[2]),
+                            TicketPrice = int.Parse(data[3]),
+                            HallId = int.Parse(data[4]),
+                            MovieId= int.Parse(data[5])
+
+                        };
+                        projections.Add(projection);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return projections;
+        }
+        public static void WriteRecord(string fileName, Projection projection)
+        {
+            string path = @"C:\Users\Milosh\Desktop\" + fileName;
+            try
+            {
+                if (!File.Exists(path))
+                {
+                    using (StreamWriter sw = File.CreateText(path))
+                    {
+                        sw.WriteLine(projection.ToString());
+                    }
+                }
+                else
+                {
+                    using (StreamWriter sw = File.AppendText(path))
+                    {
+                        sw.WriteLine(projection.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        public static void WriteAllRecords(string fileName, List<Projection> projections)
+        {
+            string path = @"C:\Users\Milosh\Desktop\" + fileName;
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    sw.Write(string.Empty);
+
+                }
+
+                using (StreamWriter sw = File.AppendText(path))
+                {
+
+                    foreach (var projection in projections)
+                    {
+                        sw.WriteLine(projection.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
+        }
+        public static List<Reservation> ReadAllReservations(string fileName)
+        {
+            List<Reservation> reservations = new List<Reservation>();
+            string line;
+            try
+            {
+                using (StreamReader sr = new StreamReader(@"C:\Users\Milosh\Desktop\" + fileName))
+                {
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        string[] data = line.Split('|');
+                        Reservation reservation = new Reservation()
+                        {
+                            ReservationId = int.Parse(data[0]),
+                            StandardUserId = int.Parse(data[1]),
+                            ProjectionId = int.Parse(data[2]),
+                            NumberOfSeats = int.Parse(data[3]),
+                            OverallPrice = int.Parse(data[4]),
+                        };
+                        reservations.Add(reservation);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {           
+            }
+
+            return reservations;
+        }
+        public static void WriteRecord(string fileName, Reservation reservation)
+        {
+            string path = @"C:\Users\Milosh\Desktop\" + fileName;
+            try
+            {
+                if (!File.Exists(path))
+                {
+                    using (StreamWriter sw = File.CreateText(path))
+                    {
+                        sw.WriteLine(reservation.ToString());
+                    }
+                }
+                else
+                {
+                    using (StreamWriter sw = File.AppendText(path))
+                    {
+                        sw.WriteLine(reservation.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        public static void WriteAllRecords(string fileName, List<Reservation> reservations)
+        {
+            string path = @"C:\Users\Milosh\Desktop\" + fileName;
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    sw.Write(string.Empty);
+
+                }
+
+                using (StreamWriter sw = File.AppendText(path))
+                {
+
+                    foreach (var reservation in reservations)
+                    {
+                        sw.WriteLine(reservation.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
+        }
+
     }
 }

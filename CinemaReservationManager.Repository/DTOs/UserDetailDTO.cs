@@ -6,9 +6,9 @@ using System.Text;
 namespace CinemaReservationManager.Repository.DTOs
 {
 
-    public class RegisterUserDTO
+    public class UserDetailDTO
     {
-
+        public int StandardUserId { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Sex { get; set; }

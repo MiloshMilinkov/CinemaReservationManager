@@ -46,11 +46,89 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Administration\AdministrationForm.cs">
+    <Compile Include="Forms\Administration\AdministrationContainerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Administration\AdministrationForm.Designer.cs">
-      <DependentUpon>AdministrationForm.cs</DependentUpon>
+    <Compile Include="Forms\Administration\AdministrationContainerForm.Designer.cs">
+      <DependentUpon>AdministrationContainerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\AdministrationNavigationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\AdministrationNavigationForm.Designer.cs">
+      <DependentUpon>AdministrationNavigationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\HallAdministrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\HallAdministrationForm.Designer.cs">
+      <DependentUpon>HallAdministrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\HallsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\HallsForm.Designer.cs">
+      <DependentUpon>HallsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\MovieAdministrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\MovieAdministrationForm.Designer.cs">
+      <DependentUpon>MovieAdministrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\ReservationAdministrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\ReservationAdministrationForm.Designer.cs">
+      <DependentUpon>ReservationAdministrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\ReservationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\ReservationsForm.Designer.cs">
+      <DependentUpon>ReservationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\StandardUserAdministrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\StandardUserAdministrationForm.Designer.cs">
+      <DependentUpon>StandardUserAdministrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\StandardUsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\StandardUsersForm.Designer.cs">
+      <DependentUpon>StandardUsersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\MoviesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\MoviesForm.Designer.cs">
+      <DependentUpon>MoviesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\ProjectionAdministrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\ProjectionAdministrationForm.Designer.cs">
+      <DependentUpon>ProjectionAdministrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\ProjectionsForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\ProjectionsForms.Designer.cs">
+      <DependentUpon>ProjectionsForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainManagement\MainManagementMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainManagement\MainManagementMainForm.Designer.cs">
+      <DependentUpon>MainManagementMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainManagement\MainManagementReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainManagement\MainManagementReservation.Designer.cs">
+      <DependentUpon>MainManagementReservation.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Welcome\LoginForm.cs">
       <SubType>Form</SubType>
@@ -78,8 +156,47 @@
     <Compile Include="Forms\Welcome\WelcomeForm.Designer.cs">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\Administration\AdministrationForm.resx">
-      <DependentUpon>AdministrationForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Administration\AdministrationContainerForm.resx">
+      <DependentUpon>AdministrationContainerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\AdministrationNavigationForm.resx">
+      <DependentUpon>AdministrationNavigationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\HallAdministrationForm.resx">
+      <DependentUpon>HallAdministrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\HallsForm.resx">
+      <DependentUpon>HallsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\MovieAdministrationForm.resx">
+      <DependentUpon>MovieAdministrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\MoviesForm.resx">
+      <DependentUpon>MoviesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\ProjectionAdministrationForm.resx">
+      <DependentUpon>ProjectionAdministrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\ReservationAdministrationForm.resx">
+      <DependentUpon>ReservationAdministrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\ReservationsForm.resx">
+      <DependentUpon>ReservationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\StandardUserAdministrationForm.resx">
+      <DependentUpon>StandardUserAdministrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\StandardUsersForm.resx">
+      <DependentUpon>StandardUsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\ProjectionsForms.resx">
+      <DependentUpon>ProjectionsForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainManagement\MainManagementMainForm.resx">
+      <DependentUpon>MainManagementMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainManagement\MainManagementReservation.resx">
+      <DependentUpon>MainManagementReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Welcome\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

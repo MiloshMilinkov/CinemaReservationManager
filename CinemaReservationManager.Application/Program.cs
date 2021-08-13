@@ -1,4 +1,5 @@
 ﻿using CinemaReservationManager.Application.Forms.Administration;
+using CinemaReservationManager.Application.Forms.MainManagement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace CinemaReservationManager.Application
         {
             System.Windows.Forms.Application.EnableVisualStyles();
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-            System.Windows.Forms.Application.Run(new AdministrationContainerForm("username"));
+            System.Windows.Forms.Application.Run(new WelcomeContainerForm());
         }
     }
 }

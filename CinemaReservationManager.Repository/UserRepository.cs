@@ -137,6 +137,7 @@ namespace CinemaReservationManager.Repository
                 if (standardUser.UserName == loginUserDTO.UserName && standardUser.Password== loginUserDTO.Password)
                 {
                     result.IsSuccessful = true;
+                    result.Object = standardUser;
                     return result;
 
                 }

@@ -1,4 +1,5 @@
-﻿using CinemaReservationManager.Repository;
+﻿using CinemaReservationManager.Application.Forms.MainManagement;
+using CinemaReservationManager.Repository;
 using CinemaReservationManager.Repository.DTOs;
 using CinemaReservationManager.Repository.Models;
 using System;
@@ -47,10 +48,10 @@ namespace CinemaReservationManager.Application.Forms.Administration
             ReservationDetailDTO reservationDetailDTO = new ReservationDetailDTO()
             {
                 ReservationId = _id,
-                StadnardUserId = cmbUser.SelectedValue.ToString(),
+                StandardUserId = cmbUser.SelectedValue.ToString(),
                 ProjectionId = cmbProjection.SelectedValue.ToString(),
                 NumberOfSeats = txtNumberOfSeats.Text,
-                OverallPrice = txtNumberOfSeats.Text
+                OverallPrice = txtOverallPrice.Text
             };
 
             Result result = null;

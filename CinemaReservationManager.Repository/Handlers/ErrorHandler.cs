@@ -145,7 +145,7 @@ namespace CinemaReservationManager.Repository.Handlers
         {
             Result result = new Result();
             result.ErrorMessage = "Please enter: ";
-            if (string.IsNullOrEmpty(reservationDetailDTO.StadnardUserId))
+            if (string.IsNullOrEmpty(reservationDetailDTO.StandardUserId))
             {
                 result.IsSuccessful = false;
                 result.ErrorMessage += " the Customer";

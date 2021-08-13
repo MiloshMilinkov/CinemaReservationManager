@@ -1,4 +1,5 @@
 ﻿using CinemaReservationManager.Application.Forms.Administration;
+using CinemaReservationManager.Application.Forms.MainManagement;
 using CinemaReservationManager.Repository;
 using CinemaReservationManager.Repository.DTOs;
 using CinemaReservationManager.Repository.Models;
@@ -84,6 +85,10 @@ namespace CinemaReservationManager.Application
                 if (result.IsSuccessful)
                 {
                     MessageBox.Show("Login successful!");
+                    StandardUser loggedUser = (StandardUser)result.Object;
+                    MainManagementMainForm mainManagementMainForm = new MainManagementMainForm(loggedUser.Id);
+                    mainManagementMainForm.Show();
+                    _formMdiParent.Hide();
                 }
                 else
                 {
